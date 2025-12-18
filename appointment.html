@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Book Appointment | Glory Beauty Empire</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+  <img src="assets/images/logo.png" alt="Glory Beauty Empire"><h3>Glory Beauty Empire</h3>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="appointment.html">Book Appointment</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="social-header">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
+  </div>
+</header>
+
+<section class="form-section">
+  <h2>Book an Appointment</h2>
+
+  <form action="https://formspree.io/f/abcdwxyz" method="POST">
+    <!-- 👆 REPLACE WITH YOUR REAL FORMSPREE LINK -->
+
+    <input type="text" name="name" placeholder="Full Name" required>
+
+    <input type="email" name="email" placeholder="Email Address" required>
+
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+
+    <select name="service" required>
+      <option value="">Select Service</option>
+      <optgroup label="Hair Styling">
+        <option>Wig Installation</option>
+        <option>African Braids</option>
+        <option>Wig Making</option>
+        <option>Hair Washing</option>
+        <option>Children's Styling</option>
+      </optgroup>
+      <optgroup label="Nails">
+        <option>Nails Fixing</option>
+      </optgroup>
+      <optgroup label="Makeup">
+        <option>Makeup / Face Beautification</option>
+      </optgroup>
+    </select>
+
+    <input type="date" name="appointment_date" required>
+
+    <textarea name="message" placeholder="Additional Notes"></textarea>
+
+    <button type="submit">Confirm Appointment</button>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div>
+      <h4>Services</h4>
+      <p>Hair Styling</p>
+      <p>Nails</p>
+      <p>Makeup</p>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>Phone: +1514-546-7677</p>
+      <p>Email: glorybeautyempire7@email.com</p>
+      <p>
+        <a href="https://maps.google.com?q=Quebec+2804 rue remembrance lachine H8S" target="_blank">
+          2804 rue remembrance lachine H8S, Quebec, Canada
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <p class="copyright">© 2025 Glory Beauty Empire</p>
+</footer>
+
+<a href="https://wa.me/+1514-546-7677" class="whatsapp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>

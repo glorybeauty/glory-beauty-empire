@@ -31,38 +31,78 @@
 <section class="form-section">
   <h2>Book an Appointment</h2>
 
-  <form action="https://formspree.io/f/abcdwxyz" method="POST">
-    <!-- 👆 REPLACE WITH YOUR REAL FORMSPREE LINK -->
+  <form id="appointmentForm"
+      action="https://formspree.io/f/xvzporwn"
+      method="POST">
 
-    <input type="text" name="name" placeholder="Full Name" required>
+  <input type="text" name="name" placeholder="Full Name" required>
 
-    <input type="email" name="email" placeholder="Email Address" required>
+  <input type="email" name="email" placeholder="Email Address" required>
 
-    <input type="tel" name="phone" placeholder="Phone Number" required>
+  <input type="tel" name="phone" placeholder="Phone Number" required>
 
-    <select name="service" required>
-      <option value="">Select Service</option>
-      <optgroup label="Hair Styling">
-        <option>Wig Installation</option>
-        <option>African Braids</option>
-        <option>Wig Making</option>
-        <option>Hair Washing</option>
-        <option>Children's Styling</option>
-      </optgroup>
-      <optgroup label="Nails">
-        <option>Nails Fixing</option>
-      </optgroup>
-      <optgroup label="Makeup">
-        <option>Makeup / Face Beautification</option>
-      </optgroup>
-    </select>
+  <select name="service" required>
+    <option value="">Select Service</option>
 
-    <input type="date" name="appointment_date" required>
+    <optgroup label="Hair Styling">
+      <option>Wig Installation</option>
+      <option>African Braids</option>
+      <option>Wig Making</option>
+      <option>Hair Washing</option>
+      <option>Children's Styling</option>
+    </optgroup>
 
-    <textarea name="message" placeholder="Additional Notes"></textarea>
+    <optgroup label="Nails">
+      <option>Nails Fixing</option>
+    </optgroup>
 
-    <button type="submit">Confirm Appointment</button>
-  </form>
+    <optgroup label="Makeup">
+      <option>Makeup / Face Beautification</option>
+    </optgroup>
+  </select>
+
+  <input type="date" name="appointment_date" required>
+
+  <textarea name="message" placeholder="Additional Notes"></textarea>
+
+  <button type="submit">Confirm Appointment</button>
+  <script>
+const form = document.getElementById("appointmentForm");
+const successMessage = document.getElementById("successMessage");
+
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+
+  if (response.ok) {
+    form.reset();
+    form.style.display = "none";
+    successMessage.style.display = "block";
+  } else {
+    alert("Something went wrong. Please try again.");
+  }
+});
+</script>
+
+</form>
+
+<!-- SUCCESS MESSAGE -->
+<div id="successMessage" class="success-message">
+  <i class="fas fa-check-circle"></i>
+  <h3>Appointment Confirmed!</h3>
+  <p>
+    Thank you for booking with <strong>Glory Beauty Empire</strong>.<br>
+    We have received your appointment request and will contact you shortly.
+  </p>
+</div>
+
 </section>
 
 <footer>
